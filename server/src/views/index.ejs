@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refugio</title>
+    <%- include("partials/head") %>
+</head>
+<body>
+    
+    <div class="container p-4">
+        <div class="row">        
+              <% images.forEach(function(image) { %>
+                 <div class="col-12 col-md-6 col-lg-4">
+                  <div class="card">
+                   <div class="card-body">
+                      <img src="<%= image.path %>" class="card-img-top">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= image.title %></h5>
+                        <p class="card-text"><%= image.sexo %></p>
+                        <p class="card-text"><%= image.edad %></p>
+                        <p class="card-text"><%= image.tamanio %></p>
+                        <p class="card-text"><%= image.raza %></p>
+                        <p class="card-text"><%= image.description %></p>
+                        
+                        <a href="/api/image/image/<%= image._id %>" class="btn btn-primary">
+                           Ver Perfil
+                        </a>
+
+                      </div>
+                   </div>
+                  </div> 
+                 </div>
+              <% }) %>
+            </div>
+           </div>
+        </div>
+     </div>
+
+
+</body>
+</html>
